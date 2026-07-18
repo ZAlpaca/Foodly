@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+    <title>Foodly - Premium Culinary Experience</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#5f0a00",
+                        "primary-fixed": "#ffdad3",
+                        "surface-bright": "#f9f9fe",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "background": "#f9f9fe",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a5",
+                        "outline": "#8e706a",
+                        "surface-container-highest": "#e2e2e7",
+                        "on-surface-variant": "#5a413b",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "on-surface": "#1a1c1f",
+                        "inverse-primary": "#ffb4a5",
+                        "secondary": "#785900",
+                        "on-primary-fixed": "#3e0400",
+                        "inverse-surface": "#2e3034",
+                        "surface-container-low": "#f3f3f8",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#8e1500",
+                        "on-primary": "#ffffff",
+                        "primary": "#ff5f40", // Set to requested primary
+                        "outline-variant": "#e3beb7",
+                        "on-secondary-container": "#6c5000",
+                        "secondary-fixed": "#ffdf9e",
+                        "surface-tint": "#b3290f",
+                        "on-tertiary-container": "#2d2d2d",
+                        "surface-container-high": "#e8e8ed",
+                        "surface-dim": "#d9dade",
+                        "secondary-fixed-dim": "#fabd00",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f0f5",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "tertiary": "#5f5e5e",
+                        "tertiary-container": "#969494",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary-container": "#fdc003",
+                        "on-background": "#1a1c1f",
+                        "surface-variant": "#e2e2e7",
+                        "surface": "#f9f9fe",
+                        "primary-container": "#ff5f40",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container": "#ededf2",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "24px",
+                        "stack-md": "16px",
+                        "gutter": "12px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "plusJakartaSans": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                        "body-md": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f9f9fe;
+            min-height: 100dvh;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ios-list-item:active {
+            background-color: #f2f2f7;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+        .safe-pb {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .profile-card-shadow {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .tab-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #ff5f40;
+            border-radius: 999px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased">
+    <div id="root"></div>
+
+    <!-- Load Libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
+    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { createRoot } = ReactDOM;
+        const { MemoryRouter, Routes, Route, Link, useNavigate, useLocation } = ReactRouterDOM;
+
+        // --- Shared Components ---
+
+        const BottomNav = () => {
+            const location = useLocation();
+            const navigate = useNavigate();
+            const activeTab = location.pathname;
+
+            const tabs = [
+                { path: '/home', label: 'Home', icon: 'home' },
+                { path: '/orders', label: 'Orders', icon: 'receipt_long' },
+                { path: '/profile', label: 'Profile', icon: 'person' },
+            ];
+
+            return (
+                <nav class="fixed bottom-0 left-0 w-full glass-nav bg-surface/80 shadow-[0_-1px_0_0_rgba(0,0,0,0.05)] rounded-t-xl z-50 flex justify-around items-center pt-2 pb-safe px-margin-mobile h-16">
+                    {tabs.map(tab => (
+                        <button 
+                            key={tab.path}
+                            onClick={() => navigate(tab.path)}
+                            className={`flex flex-col items-center justify-center transition-all duration-200 px-4 py-2 active:scale-90 ${activeTab === tab.path ? 'text-primary' : 'text-on-surface-variant'}`}
+                        >
+                            <span className="material-symbols-outlined" style={activeTab === tab.path ? {fontVariationSettings: "'FILL' 1"} : {}}>{tab.icon}</span>
+                            <span className="font-label-md text-label-md">{tab.label}</span>
+                        </button>
+                    ))}
+                </nav>
+            );
+        };
+
+        // --- Screens ---
+
+        const WelcomeScreen = () => {
+            const navigate = useNavigate();
+            return (
+                <main className="relative min-h-screen flex flex-col justify-between overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <div className="w-full h-[663px] relative overflow-hidden">
+                            <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnEy49k5-QdUGbZ4tEYoIY1T51kXYUT0WsYh61VhDatSpWVWFkNGvqt36qN38cJwGn6DtrEnJLa3C1RRPYjgg7tysHB4owp-LGxP7KzjsUG559YtjUVIOMCcvyQA_YzdEuoPt1_eaos0mH5Mcjwnr6cqRBkhItIx91gNrBb23B01f_LED5CQ9BRlFumSdHAKRpF8M6J285zp-mdRqYLzmF34h5p6mPnYuJL8XFkxEAcF-s12PTUac5cNtK12KKB_WGDgk0kXQUCDWo')"}}></div>
+                            <div className="absolute inset-0 bg-gradient-to-bottom from-[rgba(249,249,254,0.4)] via-[rgba(249,249,254,0)] to-[#f9f9fe]"></div>
+                        </div>
+                    </div>
+                    <header className="relative z-10 pt-16 px-margin-mobile flex justify-center">
+                        <div className="flex items-center gap-2">
+                            <span className="text-primary font-headline-lg-mobile text-headline-lg-mobile tracking-tighter">Foodly</span>
+                        </div>
+                    </header>
+                    <div className="relative z-10 px-margin-mobile pb-12 flex flex-col items-center text-center">
+                        <div className="mb-stack-lg animate-bounce">
+                            <div className="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center shadow-sm">
+                                <span className="material-symbols-outlined text-on-primary-fixed text-4xl">restaurant</span>
+                            </div>
+                        </div>
+                        <h1 className="font-display-lg text-display-lg text-on-surface mb-stack-md max-w-[320px]">Elevate Your Culinary Journey</h1>
+                        <p className="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-[340px]">Experience premium dining from the city's finest chefs, delivered with elegance.</p>
+                        <div className="w-full max-w-md flex flex-col gap-4">
+                            <button onClick={() => navigate('/home')} className="h-[54px] w-full bg-primary text-on-primary font-headline-md text-headline-md rounded-[24px] shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+                                Get Started <span className="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                            <button onClick={() => navigate('/home')} className="h-[54px] w-full bg-surface-container-low text-on-surface font-body-lg text-body-lg rounded-[24px] active:scale-95 transition-all">Log In</button>
+                        </div>
+                    </div>
+                </main>
+            );
+        };
+
+        const HomeScreen = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="bg-background min-h-screen">
+                    <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm flex items-center justify-between px-margin-mobile h-14">
+                        <div className="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
+                            <span className="material-symbols-outlined text-primary">location_on</span>
+                            <div className="flex flex-col">
+                                <span className="font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant opacity-70">Deliver to</span>
+                                <h1 className="font-headline-md text-headline-md leading-none text-on-surface">Current Location</h1>
+                            </div>
+                            <span className="material-symbols-outlined text-on-surface-variant text-sm">expand_more</span>
+                        </div>
+                        <button className="w-10 h-10 flex items-center justify-center rounded-full active:scale-95 transition-transform">
+                            <span className="material-symbols-outlined text-on-surface">notifications</span>
+                        </button>
+                    </header>
+                    <main className="pt-20 pb-24 px-margin-mobile">
+                        <section className="mb-stack-lg">
+                            <div className="relative group">
+                                <span className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">search</span>
+                                <input className="w-full h-14 pl-12 pr-4 bg-surface-container-low border-none rounded-xl font-body-md focus:ring-2 focus:ring-primary/20" placeholder="Search dishes or restaurants..." type="text"/>
+                                <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary">tune</span>
+                            </div>
+                        </section>
+                        <section className="mb-stack-lg overflow-x-auto hide-scrollbar -mx-margin-mobile px-margin-mobile">
+                            <div className="flex gap-4 py-2">
+                                {['Dining', 'Bakery', 'Drinks', 'Dessert', 'Burger', 'Asian'].map((cat, i) => (
+                                    <div key={cat} className="flex flex-col items-center gap-2 shrink-0 active:scale-90 transition-all cursor-pointer">
+                                        <div className={`w-16 h-16 rounded-full flex items-center justify-center ${i===0 ? 'bg-primary-container text-on-primary-container' : 'bg-surface-container-high text-on-surface-variant'}`}>
+                                            <span className="material-symbols-outlined text-[28px]">{i===0 ? 'restaurant' : i===1 ? 'bakery_dining' : i===2 ? 'local_bar' : i===3 ? 'icecream' : i===4 ? 'lunch_dining' : 'ramen_dining'}</span>
+                                        </div>
+                                        <span className="font-label-md text-label-md">{cat}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                        <section className="space-y-6">
+                            <h2 className="font-headline-md text-headline-md">Featured Restaurants</h2>
+                            {[
+                                { name: 'Maison de l\'Élégance', type: '$$$ • French', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAbrNVfLautwkdPP9rDOrRIQc73oRJss1ABrQeaxkSpHyDlNr8lDdMMKawClAJ9QWajM85IvAIW4jGWdDzkAhdMfFnKwhqIQPnUa_mGfDsM_e3dk0m96zM3PqyJrNUd3D-M1ULTZ3Zr9Gzce-EXN_eL9KtjWCyjfANROS3ebXwCNS6KeCiHfM-__k4zq3zV8HwoC5gNhexBxgkFHYyJ8kNBH3yCKVHeop5UMmo6gQAZ82KeNR96XYobTOjXk05yXDA8cJYmobpWvJ70', rating: '4.9', time: '25-35' },
+                                { name: 'Sakura Zenith', type: '$$$$ • Japanese', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCO38PB5IfwU_PMhbpKO7qptKDYTVjB7KcHcAbbIcL_T0V8IasLzEM-PM5z3GjhBu4o5W3sCc5Ev7nKmpePiWWTBH6y8Vw4cHHmpIYvchZkyj0Y6tIg9nue4Ko8ye9SAv76OA1-2ylNISfrbkLT1T_KFYNE6zwEB1cUZix7MJuPRuGyj0MedYQHqYHp5Y4WHMHDgrMXWzVdSESpAi__qaqvhVwFJLLpibnT_16KmIFmnKIIrr2s1f6u5k1Whcg16coQv7hDDsU5LtuZ', rating: '4.8', time: '20-35' }
+                            ].map(res => (
+                                <div key={res.name} onClick={() => navigate('/restaurant')} className="bg-surface rounded-[24px] overflow-hidden profile-card-shadow active:scale-[0.98] transition-all cursor-pointer">
+                                    <div className="relative h-56 w-full bg-cover bg-center" style={{backgroundImage: `url(${res.img})`}}>
+                                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-1">
+                                            <span className="material-symbols-outlined text-secondary text-sm" style={{fontVariationSettings: "'FILL' 1"}}>star</span>
+                                            <span className="font-label-md text-label-md">{res.rating}</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-4">
+                                        <div className="flex justify-between items-start">
+                                            <h3 className="font-headline-md text-headline-md">{res.name}</h3>
+                                            <span className="text-on-surface-variant font-label-md">{res.type}</span>
+                                        </div>
+                                        <p className="text-on-surface-variant font-body-md mt-1">{res.time} mins • Free Delivery</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </section>
+                    </main>
+                    <BottomNav />
+                </div>
+            );
+        };
+
+        const RestaurantScreen = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="bg-background min-h-screen">
+                    <header className="fixed top-0 left-0 right-0 z-50 glass-nav bg-surface/80 shadow-sm px-margin-mobile h-14 flex items-center justify-between">
+                        <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest/80 shadow-sm active:scale-95"><span className="material-symbols-outlined">arrow_back</span></button>
+                        <div className="flex gap-2">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest/80 shadow-sm active:scale-95"><span className="material-symbols-outlined">search</span></button>
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest/80 shadow-sm active:scale-95"><span className="material-symbols-outlined">favorite</span></button>
+                        </div>
+                    </header>
+                    <main className="pb-32">
+                        <section className="relative h-[300px] w-full bg-cover bg-center" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbrNVfLautwkdPP9rDOrRIQc73oRJss1ABrQeaxkSpHyDlNr8lDdMMKawClAJ9QWajM85IvAIW4jGWdDzkAhdMfFnKwhqIQPnUa_mGfDsM_e3dk0m96zM3PqyJrNUd3D-M1ULTZ3Zr9Gzce-EXN_eL9KtjWCyjfANROS3ebXwCNS6KeCiHfM-__k4zq3zV8HwoC5gNhexBxgkFHYyJ8kNBH3yCKVHeop5UMmo6gQAZ82KeNR96XYobTOjXk05yXDA8cJYmobpWvJ70')"}}>
+                            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent"></div>
+                        </section>
+                        <section className="relative -mt-12 px-margin-mobile z-10">
+                            <div className="bg-surface-container-lowest rounded-3xl p-6 shadow-sm border border-outline-variant/30">
+                                <h1 className="font-headline-lg-mobile text-headline-lg-mobile">Maison de l'Élégance</h1>
+                                <p className="font-body-md text-on-surface-variant">Modern French Fine Dining • $$ $ • 4.9 (200+ reviews)</p>
+                                <div className="grid grid-cols-3 gap-4 pt-4 mt-4 border-t border-outline-variant/30 text-center">
+                                    <div><span className="material-symbols-outlined text-primary block">schedule</span><span className="text-label-md text-on-surface-variant">25-35 min</span></div>
+                                    <div className="border-x border-outline-variant/30"><span className="material-symbols-outlined text-primary block">delivery_dining</span><span className="text-label-md text-on-surface-variant">$4.99 Del</span></div>
+                                    <div><span className="material-symbols-outlined text-primary block">distance</span><span className="text-label-md text-on-surface-variant">1.2 mi</span></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="mt-8 px-margin-mobile space-y-8">
+                            <h2 className="font-headline-md">Signature Entrées</h2>
+                            {[
+                                { name: 'The Truffle Wagyu', desc: '200g Wagyu, black truffle oil, aged Gruyère on brioche.', price: '$24.50', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBpJ3xde-leCD8MfCoGLGgcQNQG0wrtywpKI0RwG5Pd9xtQZGAnQ4xQAeA5rNVEKVlxg-qMe1av_2frjVuEsGEeo4ro9vuJlhXERC7aBQQNtEB2TQnRidGY3Xqr5Tv1OvLXMAVozmOiSH8IslB30-TxkPmpOqHh1JsgKX_xSWdsonrzIutVW1uYWr44_kLQ8obRY_jEJJpA49wxbVhEGJz6peUiTC1aPvWNMArFhrfQvFXLIcASnh7rFSXe5cQMMKOBDOQKmoaz1PUQ' },
+                                { name: 'Wild Truffle Risotto', desc: 'Arborio rice, wild mushrooms, fresh black truffle shavings.', price: '$32.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCEeSwuTcTHlKgD8AaclHh7LvUFeotKmvTstvXRvY9KdJ9GINvuj6jCWKSWCiO9kB6k9Sq31BMtotLpmwTzWRapOUdSJ2YLALFpJ0LyKc-yANWIY_GwvXLFbIex4WB0S99xKVyqTdV-VjHIzy8gC5aXcXeFCTkTLgeFDcFFhP82OvaVGCDAcy7m9XhkU8XUdHn-_f6pME1rIDP0MSnLT01cx7Ubato43lSkosWtczyJf1kRzv4xrtDljrs0UQEGukGY62VApWd-KHDW' }
+                            ].map(item => (
+                                <div key={item.name} onClick={() => navigate('/details')} className="flex gap-4 cursor-pointer active:opacity-80">
+                                    <div className="flex-1">
+                                        <h3 className="font-body-lg font-semibold">{item.name}</h3>
+                                        <p className="font-body-md text-on-surface-variant line-clamp-2">{item.desc}</p>
+                                        <div className="flex items-center gap-3 mt-3">
+                                            <span className="font-headline-md text-primary">{item.price}</span>
+                                            <button className="bg-primary text-on-primary px-5 py-1 rounded-full text-label-md">Add</button>
+                                        </div>
+                                    </div>
+                                    <div className="w-24 h-24 rounded-2xl bg-cover bg-center shrink-0 border border-outline-variant/20" style={{backgroundImage: `url(${item.img})`}}></div>
+                                </div>
+                            ))}
+                        </section>
+                    </main>
+                    <div className="fixed bottom-6 left-margin-mobile right-margin-mobile z-50">
+                        <div onClick={() => navigate('/cart')} className="glass-nav bg-on-surface/90 text-white flex items-center justify-between p-4 rounded-3xl shadow-2xl cursor-pointer active:scale-95 transition-transform">
+                            <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold">2</div>
+                                <div>
+                                    <p className="text-[10px] opacity-80 uppercase">Basket</p>
+                                    <p className="font-headline-md">$77.00</p>
+                                </div>
+                            </div>
+                            <button className="bg-primary px-8 py-2 rounded-2xl font-bold flex items-center gap-2">Checkout <span className="material-symbols-outlined">arrow_forward_ios</span></button>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const FoodDetailsScreen = () => {
+            const navigate = useNavigate();
+            const [qty, setQty] = useState(1);
+            return (
+                <div className="bg-surface min-h-screen">
+                    <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin-mobile h-14">
+                        <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center rounded-full bg-surface/80 glass-nav active:scale-95"><span className="material-symbols-outlined">chevron_left</span></button>
+                        <div className="flex gap-2">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-surface/80 glass-nav"><span className="material-symbols-outlined">share</span></button>
+                            <button className="w-10 h-10 flex items-center justify-center rounded-full bg-surface/80 glass-nav"><span className="material-symbols-outlined">favorite</span></button>
+                        </div>
+                    </nav>
+                    <main className="pb-32">
+                        <img className="w-full h-[400px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpJ3xde-leCD8MfCoGLGgcQNQG0wrtywpKI0RwG5Pd9xtQZGAnQ4xQAeA5rNVEKVlxg-qMe1av_2frjVuEsGEeo4ro9vuJlhXERC7aBQQNtEB2TQnRidGY3Xqr5Tv1OvLXMAVozmOiSH8IslB30-TxkPmpOqHh1JsgKX_xSWdsonrzIutVW1uYWr44_kLQ8obRY_jEJJpA49wxbVhEGJz6peUiTC1aPvWNMArFhrfQvFXLIcASnh7rFSXe5cQMMKOBDOQKmoaz1PUQ" />
+                        <div className="px-margin-mobile -mt-8 relative z-10">
+                            <div className="flex justify-between items-start mb-2">
+                                <h1 className="font-display-lg text-display-lg">The Truffle Wagyu</h1>
+                                <span className="font-headline-md text-primary">$24.50</span>
+                            </div>
+                            <div className="flex items-center gap-2 mb-6">
+                                <span className="material-symbols-outlined text-secondary" style={{fontVariationSettings: "'FILL' 1"}}>star</span>
+                                <span className="text-label-md text-on-surface-variant">4.8 (120+ reviews)</span>
+                            </div>
+                            <p className="font-body-lg text-on-surface-variant mb-6">Our signature masterpiece featuring a 200g Wagyu beef patty, infused with black truffle oil, topped with 24-month aged Gruyère.</p>
+                            <div className="grid grid-cols-4 gap-2 mb-8">
+                                {[{l:'Cal', v:'840'}, {l:'Prot', v:'42g'}, {l:'Fat', v:'54g'}, {l:'Carb', v:'38g'}].map(i => (
+                                    <div key={i.l} className="bg-surface-container-low rounded-xl p-3 text-center border border-outline-variant/30">
+                                        <p className="text-label-md text-on-surface-variant">{i.l}</p>
+                                        <p className="font-headline-md">{i.v}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <h2 className="font-headline-md">Quantity</h2>
+                                <div className="flex items-center bg-surface-container-high rounded-full p-1 gap-4">
+                                    <button onClick={() => setQty(Math.max(1, qty-1))} className="w-10 h-10 bg-white rounded-full shadow-sm"><span className="material-symbols-outlined">remove</span></button>
+                                    <span className="font-headline-md w-6 text-center">{qty}</span>
+                                    <button onClick={() => setQty(qty+1)} className="w-10 h-10 bg-primary text-white rounded-full"><span className="material-symbols-outlined">add</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <div className="fixed bottom-0 left-0 w-full glass-nav bg-surface/90 pb-safe border-t px-margin-mobile py-4 flex items-center gap-4">
+                        <div className="flex flex-col min-w-[80px]">
+                            <span className="text-label-md text-on-surface-variant">Total</span>
+                            <span className="font-headline-lg-mobile">${(24.5 * qty).toFixed(2)}</span>
+                        </div>
+                        <button onClick={() => navigate('/cart')} className="flex-1 h-14 bg-primary text-on-primary font-headline-md rounded-2xl flex items-center justify-center gap-2">
+                            <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>shopping_bag</span> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        const CartScreen = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="bg-background min-h-screen">
+                    <header className="fixed top-0 w-full z-50 glass-nav bg-surface/80 flex items-center justify-between px-margin-mobile h-14 shadow-sm">
+                        <button onClick={() => navigate(-1)} className="text-on-surface-variant active:scale-95"><span className="material-symbols-outlined">arrow_back_ios_new</span></button>
+                        <h1 className="font-headline-md">Your Cart</h1>
+                        <button className="text-primary font-label-md">Clear</button>
+                    </header>
+                    <main className="pt-20 pb-40 px-margin-mobile max-w-2xl mx-auto space-y-6">
+                        <div className="p-4 bg-surface-container-low rounded-xl flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>location_on</span></div>
+                            <div className="flex-1">
+                                <p className="text-label-md text-on-surface-variant">Delivering to</p>
+                                <p className="font-body-md font-semibold">221B Baker Street, London</p>
+                            </div>
+                            <span className="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+                        </div>
+                        <div className="space-y-4">
+                            {[
+                                { name: 'Truffle Tagliatelle', price: '$24.00', qty: 1, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD56uI32Uzgs0yNmPbwMOKpEKtGLX0OEZ-AM7d4U5L-mIYK0BfkjJCB_cSPnogafFlFyoCUEhJAoX0OuvngpkXZgzsltNybkXUFOU7axra20aeR0UTJbpc2qsKYQGqDLFn3wPAwcV760Mv9tQ8J-kqxrDaD7HuyxCep3JzO0ioQLikCB293JQ6N7x3Pqe-5cSF8KVfSIGRO6bN-xWGlOCSB_TwAq7q5M5f6qlK9wBZdtWc4r3lVpV53LvpHY6OMA8zWBJg4rKfMGrj4' },
+                                { name: 'Heirloom Burrata', price: '$18.50', qty: 2, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCZFnXT5X4Q3SRcZqCkEc_fSGunhE_raOZtAY0YivKxJUucPGMypkjCXTp-Z6kBhR8Oy0AVJt-GKfwq72dqIsh6CL6Jy9w3VPk2EI7Msm-Tn9iQgMTSsnTAKHXZ9QIczIngZQJNtkVClqcAQK2G8kuxGatSvmM4d1kWhJp6JEgRKHOfyw6zZMoapBSwfMvpvCwKOgMP_PWqRgvdNbel9JVzIHtyfEEnOgW9oduSY96o0XTXIX4ARcRF_OuALrdLjCIj2Nye8rxJm4N3' }
+                            ].map(item => (
+                                <div key={item.name} className="flex gap-4 p-4 bg-white rounded-2xl profile-card-shadow">
+                                    <img className="w-20 h-20 rounded-xl object-cover" src={item.img} />
+                                    <div className="flex-1 flex flex-col justify-between">
+                                        <div className="flex justify-between">
+                                            <h3 className="font-headline-md !text-[17px]">{item.name}</h3>
+                                            <span className="font-bold">{item.price}</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex items-center bg-surface-container-low rounded-full px-1 py-1">
+                                                <button className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-200"><span className="material-symbols-outlined text-[18px]">remove</span></button>
+                                                <span className="px-3 text-label-md font-semibold">{item.qty}</span>
+                                                <button className="w-7 h-7 flex items-center justify-center rounded-full bg-primary text-white"><span className="material-symbols-outlined text-[18px]">add</span></button>
+                                            </div>
+                                            <button className="text-error"><span className="material-symbols-outlined">delete_outline</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="pt-4 border-t border-outline-variant space-y-2">
+                            <div className="flex justify-between text-on-surface-variant"><p>Subtotal</p><p>$73.00</p></div>
+                            <div className="flex justify-between text-on-surface-variant"><p>Delivery Fee</p><p>$5.00</p></div>
+                            <div className="flex justify-between font-headline-md pt-2 border-t"><p>Total</p><p className="text-primary">$80.50</p></div>
+                        </div>
+                    </main>
+                    <div className="fixed bottom-0 left-0 w-full glass-nav bg-white px-margin-mobile pt-4 pb-safe z-50">
+                        <button onClick={() => navigate('/checkout')} className="w-full h-[54px] bg-primary text-on-primary rounded-2xl font-headline-md flex items-center justify-center gap-3 active:scale-95 transition-all shadow-lg">
+                            Go to Checkout <span className="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                        <div className="h-4"></div>
+                    </div>
+                </div>
+            );
+        };
+
+        const CheckoutScreen = () => {
+            const navigate = useNavigate();
+            const [loading, setLoading] = useState(false);
+            const handleOrder = () => {
+                setLoading(true);
+                setTimeout(() => navigate('/orders'), 1500);
+            };
+            return (
+                <div className="bg-surface min-h-screen">
+                    <header className="fixed top-0 w-full z-50 glass-nav bg-surface/80 flex items-center justify-between px-margin-mobile h-14 shadow-sm">
+                        <button onClick={() => navigate(-1)} className="active:scale-95"><span className="material-symbols-outlined">arrow_back_ios</span></button>
+                        <h1 className="font-headline-md">Checkout</h1>
+                        <span className="material-symbols-outlined text-on-surface-variant">help_outline</span>
+                    </header>
+                    <main className="pt-20 pb-32 px-margin-mobile max-w-2xl mx-auto space-y-6">
+                        <section className="space-y-3">
+                            <div className="flex justify-between items-center"><h2 className="font-headline-md">Delivery Address</h2><button className="text-primary text-label-md">Change</button></div>
+                            <div className="bg-white rounded-2xl overflow-hidden profile-card-shadow border">
+                                <div className="h-32 bg-cover bg-center" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpY0bqzkrqd5zbkx1btvzTd1McVQi8eUylAcDaoMdFXn3JPcfcCPK4LbaHicXcKzTGJ2UUTAy8HTmjSoK_-aRdy68yCRmK5GaCAv3wOGPbvxyH10w5qX2UMnc4F09tnELOYzoMm2VUuvFvdAxbu-kUgUr9Y_-4yeRu4C83OKy9UZI_QxI0FnuG8mBNJ_6-ZyfZUPSraYxaGk80jp-m4JZBA09Dtlc0KlgK0K4PQ3IbkRKCYI57BFCRC8DQpcvILgUkXV58MeKpc_ar')"}}></div>
+                                <div className="p-4"><p className="font-headline-md text-[17px]">Home</p><p className="text-on-surface-variant font-body-md leading-tight">450 Serra Mall, Stanford, CA 94305</p></div>
+                            </div>
+                        </section>
+                        <section className="space-y-3">
+                            <h2 className="font-headline-md">Payment Method</h2>
+                            <div className="bg-white rounded-2xl p-4 flex items-center justify-between profile-card-shadow border">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-8 bg-black rounded-md flex items-center justify-center"><span className="text-white text-[10px] font-bold">Apple Pay</span></div>
+                                    <div><p className="font-headline-md text-[17px]">Visa •••• 4242</p></div>
+                                </div>
+                                <span className="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+                            </div>
+                        </section>
+                        <section className="space-y-3">
+                            <h2 className="font-headline-md">Order Summary</h2>
+                            <div className="bg-white rounded-2xl p-5 space-y-4 profile-card-shadow border">
+                                <div className="flex justify-between font-headline-md pt-3 border-t"><p>Total</p><p className="text-primary text-[22px]">$28.49</p></div>
+                            </div>
+                        </section>
+                    </main>
+                    <div className="fixed bottom-0 left-0 w-full glass-nav bg-white pb-safe z-50">
+                        <div className="px-margin-mobile py-4 max-w-2xl mx-auto">
+                            <button 
+                                onClick={handleOrder}
+                                disabled={loading}
+                                className="w-full h-[54px] bg-primary text-on-primary rounded-2xl font-headline-md flex items-center justify-center gap-3 shadow-lg active:scale-95 transition-all"
+                            >
+                                {loading ? <span className="material-symbols-outlined animate-spin">sync</span> : <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>shopping_bag</span>}
+                                {loading ? 'Processing...' : 'Place Order'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const OrdersScreen = () => {
+            const [tab, setTab] = useState('active');
+            return (
+                <div className="bg-background min-h-screen">
+                    <header className="fixed top-0 w-full z-50 glass-nav bg-surface/80 shadow-sm h-14 flex items-center justify-between px-margin-mobile">
+                        <div className="flex items-center gap-2">
+                            <span className="material-symbols-outlined text-primary">receipt_long</span>
+                            <h1 className="font-headline-md">Orders</h1>
+                        </div>
+                        <span className="material-symbols-outlined">search</span>
+                    </header>
+                    <main className="pt-20 pb-32 px-margin-mobile max-w-2xl mx-auto">
+                        <div className="flex gap-8 mb-6 border-b">
+                            <button onClick={() => setTab('active')} className={`pb-2 text-label-md relative ${tab === 'active' ? 'text-primary tab-active' : 'text-on-surface-variant'}`}>Active</button>
+                            <button onClick={() => setTab('past')} className={`pb-2 text-label-md relative ${tab === 'past' ? 'text-primary tab-active' : 'text-on-surface-variant'}`}>Past</button>
+                        </div>
+                        {tab === 'active' ? (
+                            <div className="space-y-4">
+                                <div className="bg-white rounded-[24px] p-4 profile-card-shadow border border-surface-container active:scale-[0.98] transition-all">
+                                    <div className="flex gap-4 mb-4">
+                                        <img className="w-16 h-16 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJFW1QLC2dnDON2Hb-LEKJvqc-ljez90J8EX8ftIhhCN1XUg3DnQlVi6j4mT3LW63YbGz4gBvU5Drg8XzSay6B0ttoSto7t0zQgWIBwWyQ6lPw9r3rLbEY2WwxwokVTWG0eXoUQhpSWyeKGmQyKZqOo257KBRlRmWZEMMpPnghvKfYXa5ENB6OKwobUlxPhjANilcz5NQiJ3N-aqwc5Vx9I6J5PRUzC0gSyDSVKO82-bklkL9lLjZMY0XD8rfzBtaqrYaoold1gihx" />
+                                        <div className="flex-grow">
+                                            <div className="flex justify-between"><h3 className="font-headline-md text-[17px]">Sourdough & Stone</h3><span className="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-1 rounded-full uppercase">Active</span></div>
+                                            <p className="text-on-surface-variant text-label-md mt-1">Today, 12:45 PM • $42.50</p>
+                                        </div>
+                                    </div>
+                                    <div className="bg-surface-container-low rounded-xl p-3 mb-4 flex items-center gap-3">
+                                        <div className="w-2 h-2 bg-primary rounded-full animate-ping"></div>
+                                        <span className="text-label-md text-primary font-semibold">Out for Delivery</span>
+                                        <span className="text-on-surface-variant text-[12px] ml-auto">ETA: 8 mins</span>
+                                    </div>
+                                    <button className="w-full h-12 bg-primary text-white rounded-2xl font-bold active:scale-95 transition-transform">Track Order</button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="space-y-4">
+                                <div className="bg-white rounded-[24px] p-4 profile-card-shadow border opacity-90">
+                                    <div className="flex gap-4 mb-4">
+                                        <img className="w-16 h-16 rounded-xl object-cover grayscale-[0.3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgBXijOfFbPXkt_TozNnz29m4JGpVAeKjzvnxSQ5fOxf1CgjbhgplSa8EUoM2E4H7i-bn3gDGoZHOd355_nDIfALj0_Y6hV7ScYoXwkKzShCYwn6mH5jDmGM7V_9jsMK_Nb2ws43zMpnn-AUsWKj_K8rAlwYW_J5fy3EeecbattRRq-pNJvOid7MHT6kkDsgPL2tfwnNeemLv2VA1h6K4S6kh0O1HJ1fZh9yOcvxf7oXAgy8wmSOjsE7mn3da5Fmkm9JCvIWVWvoqC" />
+                                        <div className="flex-grow">
+                                            <div className="flex justify-between"><h3 className="font-headline-md text-[17px]">The Morning Club</h3><span className="text-on-surface-variant text-[13px]">Delivered</span></div>
+                                            <p className="text-on-surface-variant text-label-md mt-1">Oct 24, 2023 • $19.20</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <button className="flex-1 h-12 bg-surface-container rounded-2xl font-bold">Reorder</button>
+                                        <button className="flex-1 h-12 border rounded-2xl font-bold">Receipt</button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </main>
+                    <BottomNav />
+                </div>
+            );
+        };
+
+        const ProfileScreen = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="bg-background min-h-screen">
+                    <header className="fixed top-0 w-full z-50 glass-nav bg-surface/80 h-14 flex items-center justify-between px-margin-mobile shadow-sm">
+                        <div className="flex items-center gap-2"><span className="material-symbols-outlined text-primary">location_on</span><h1 className="font-headline-md">Current Location</h1></div>
+                        <span className="material-symbols-outlined text-on-surface-variant">notifications</span>
+                    </header>
+                    <main className="pt-20 pb-32 px-margin-mobile max-w-2xl mx-auto">
+                        <section className="flex flex-col items-center mb-stack-lg">
+                            <div className="relative group cursor-pointer">
+                                <div className="w-24 h-24 rounded-full overflow-hidden profile-card-shadow border-4 border-white transition-transform active:scale-95 duration-200">
+                                    <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4QjyAfvmK9IAXrdsNNng9VMSw8a3Nfqbg2gP6KkZcZjUDAUtiPq3ga56o_ptUFnstv-y545gXlofHVkHUFKss5KDCPDteZv64MjSUxb-KBaVdzdaoeSvOnaHMUeX--Vtqim12l0dGpuoNZAv-vZSpYIvXYykaQ99SVK0K11qvQXoolzo57_matrMsXBqLFd9OttSiXEeHwxwmwCi7pKNfZ__6ZMiTbZaWOGQ7vuKQA0QfZ5h8_OpAN0xik-6VSm_LAYR15fB4h55V"/>
+                                </div>
+                                <div className="absolute bottom-0 right-0 bg-primary text-white p-1.5 rounded-full shadow-lg border-2 border-white"><span className="material-symbols-outlined text-[18px]">edit</span></div>
+                            </div>
+                            <h2 className="mt-4 font-headline-lg-mobile">Alexander West</h2>
+                            <p className="text-on-surface-variant text-label-md opacity-70">alexander.west@premium.com</p>
+                        </section>
+                        <section className="bg-white rounded-2xl overflow-hidden profile-card-shadow mb-stack-md">
+                            {['Personal Info', 'Payment Methods', 'Address Book', 'Promotions', 'Settings'].map((item, i) => (
+                                <button key={item} className="w-full flex items-center justify-between p-4 ios-list-item">
+                                    <div className="flex items-center gap-3">
+                                        <div className={`w-9 h-9 flex items-center justify-center rounded-lg ${i===0 ? 'bg-primary/10 text-primary' : i===1 ? 'bg-secondary/10 text-secondary' : 'bg-surface-variant text-on-surface-variant'}`}>
+                                            <span className="material-symbols-outlined">{i===0 ? 'person' : i===1 ? 'credit_card' : i===2 ? 'location_on' : i===3 ? 'sell' : 'settings'}</span>
+                                        </div>
+                                        <span className="text-body-md font-medium">{item}</span>
+                                    </div>
+                                    <span className="material-symbols-outlined text-outline-variant">chevron_right</span>
+                                </button>
+                            ))}
+                        </section>
+                        <button onClick={() => navigate('/')} className="w-full h-14 bg-surface-container-low rounded-2xl flex items-center justify-center gap-2 text-primary font-bold border active:scale-[0.98] transition-all"><span className="material-symbols-outlined">logout</span>Logout</button>
+                        <p className="text-center mt-6 text-on-surface-variant text-label-md opacity-40">Version 2.4.1 (Premium)</p>
+                    </main>
+                    <BottomNav />
+                </div>
+            );
+        };
+
+        // --- App Shell ---
+
+        const App = () => {
+            return (
+                <MemoryRouter initialEntries={['/']}>
+                    <Routes>
+                        <Route path="/" element={<WelcomeScreen />} />
+                        <Route path="/home" element={<HomeScreen />} />
+                        <Route path="/restaurant" element={<RestaurantScreen />} />
+                        <Route path="/details" element={<FoodDetailsScreen />} />
+                        <Route path="/cart" element={<CartScreen />} />
+                        <Route path="/checkout" element={<CheckoutScreen />} />
+                        <Route path="/orders" element={<OrdersScreen />} />
+                        <Route path="/profile" element={<ProfileScreen />} />
+                    </Routes>
+                </MemoryRouter>
+            );
+        };
+
+        const container = document.getElementById('root');
+        const root = createRoot(container);
+        root.render(<App />);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Foodly - Premium Culinary Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#5f0a00",
+                    "primary-fixed": "#ffdad3",
+                    "surface-bright": "#f9f9fe",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "background": "#f9f9fe",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb4a5",
+                    "outline": "#8e706a",
+                    "surface-container-highest": "#e2e2e7",
+                    "on-surface-variant": "#5a413b",
+                    "on-secondary-fixed-variant": "#5b4300",
+                    "on-surface": "#1a1c1f",
+                    "inverse-primary": "#ffb4a5",
+                    "secondary": "#785900",
+                    "on-primary-fixed": "#3e0400",
+                    "inverse-surface": "#2e3034",
+                    "surface-container-low": "#f3f3f8",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed-variant": "#8e1500",
+                    "on-primary": "#ffffff",
+                    "primary": "#b3290f",
+                    "outline-variant": "#e3beb7",
+                    "on-secondary-container": "#6c5000",
+                    "secondary-fixed": "#ffdf9e",
+                    "surface-tint": "#b3290f",
+                    "on-tertiary-container": "#2d2d2d",
+                    "surface-container-high": "#e8e8ed",
+                    "surface-dim": "#d9dade",
+                    "secondary-fixed-dim": "#fabd00",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f0f0f5",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "tertiary": "#5f5e5e",
+                    "tertiary-container": "#969494",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e5e2e1",
+                    "secondary-container": "#fdc003",
+                    "on-background": "#1a1c1f",
+                    "surface-variant": "#e2e2e7",
+                    "surface": "#f9f9fe",
+                    "primary-container": "#ff5f40",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container": "#ededf2",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "24px",
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f9f9fe;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(249, 249, 254, 0.4) 0%, rgba(249, 249, 254, 0) 20%, rgba(249, 249, 254, 0.8) 70%, #f9f9fe 100%);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<!-- Top Navigation (Shell Suppressed per Linear/Onboarding Rule) -->
+<!-- The TopAppBar and BottomNavBar are NOT rendered here because this is an onboarding "Welcome Screen". -->
+<main class="relative min-h-screen flex flex-col justify-between overflow-hidden">
+<!-- High-Impact Hero Section -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-[663px] relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A high-end food photography shot of a vibrant gourmet seafood pasta dish served on a handcrafted ceramic plate. The scene is illuminated by soft, natural morning light coming through a large window, creating deep, elegant shadows and highlight glints on the fresh basil leaves. The overall aesthetic is clean, minimalist, and luxurious, with a shallow depth of field that keeps the focus on the intricate textures of the food. The color palette features warm corals, rich reds, and pristine whites, perfectly aligning with the hospitality-first design system." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnEy49k5-QdUGbZ4tEYoIY1T51kXYUT0WsYh61VhDatSpWVWFkNGvqt36qN38cJwGn6DtrEnJLa3C1RRPYjgg7tysHB4owp-LGxP7KzjsUG559YtjUVIOMCcvyQA_YzdEuoPt1_eaos0mH5Mcjwnr6cqRBkhItIx91gNrBb23B01f_LED5CQ9BRlFumSdHAKRpF8M6J285zp-mdRqYLzmF34h5p6mPnYuJL8XFkxEAcF-s12PTUac5cNtK12KKB_WGDgk0kXQUCDWo')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+</div>
+<!-- Brand Identity: Minimalist Logo -->
+<header class="relative z-10 pt-16 px-margin-mobile flex justify-center">
+<div class="flex items-center gap-2">
+<span class="text-primary font-headline-lg-mobile text-headline-lg-mobile tracking-tighter">Foodly</span>
+</div>
+</header>
+<!-- Onboarding Content Canvas -->
+<div class="relative z-10 px-margin-mobile pb-12 flex flex-col items-center text-center">
+<!-- Animated Decorative Element -->
+<div class="mb-stack-lg animate-float">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-primary-fixed text-4xl">restaurant</span>
+</div>
+</div>
+<!-- Typography & Copy -->
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-md max-w-[320px]">
+                Elevate Your Culinary Journey
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-[340px]">
+                Experience premium dining from the city's finest chefs, delivered with the precision and elegance you deserve.
+            </p>
+<!-- Interaction Layer: CTA -->
+<div class="w-full max-w-md flex flex-col gap-4">
+<button class="h-[54px] w-full bg-primary text-on-primary font-headline-md text-headline-md rounded-[24px] shadow-[0_4px_20px_rgba(179,41,15,0.2)] active:scale-95 transition-transform duration-200 flex items-center justify-center gap-2" onclick="window.location.reload()">
+                    Get Started
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="h-[54px] w-full bg-surface-container-low text-on-surface font-body-lg text-body-lg rounded-[24px] active:scale-95 transition-all duration-200">
+                    Log In
+                </button>
+</div>
+<!-- Legal/Small Print -->
+<footer class="mt-8 opacity-40">
+<p class="font-label-md text-label-md text-on-surface-variant">
+                    By continuing, you agree to our Terms of Service
+                </p>
+</footer>
+</div>
+<!-- Aesthetic Lighting/Atmospheric Effect -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[300px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+</main>
+<script>
+        // Simple Micro-interaction for the logo
+        document.addEventListener('DOMContentLoaded', () => {
+            const logo = document.querySelector('header div');
+            logo.addEventListener('touchstart', () => {
+                logo.style.transform = 'scale(0.98)';
+            });
+            logo.addEventListener('touchend', () => {
+                logo.style.transform = 'scale(1)';
+            });
+        });
+
+        // Safe Area Handling for notch devices
+        const setSafeArea = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+        window.addEventListener('resize', setSafeArea);
+        setSafeArea();
+    </script>
+</body></html>

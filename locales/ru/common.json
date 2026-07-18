@@ -1,0 +1,108 @@
+{
+  "welcome": {
+    "title": "Foodly",
+    "headline": "Возвысьте своё\nкулинарное путешествие",
+    "subtitle": "Откройте для себя изысканные блюда от лучших шеф-поваров города с доставкой, достойной вашего вкуса.",
+    "getStarted": "Начать",
+    "logIn": "Войти",
+    "terms": "Продолжая, вы соглашаетесь с Условиями обслуживания"
+  },
+  "explore": {
+    "deliverTo": "Доставка",
+    "currentLocation": "Текущее местоположение",
+    "searchPlaceholder": "Поиск блюд и ресторанов...",
+    "categories": "Категории",
+    "seeAll": "Все",
+    "featured": "Рекомендуемые рестораны",
+    "freeDelivery": "Бесплатно",
+    "fastDelivery": "Быстро"
+  },
+  "restaurant": {
+    "menu": "Меню",
+    "reviews": "Отзывы",
+    "info": "Инфо",
+    "add": "Добавить",
+    "chefsChoice": "Выбор шефа",
+    "viewBasket": "Корзина",
+    "checkout": "Оформить",
+    "delivery": "Доставка",
+    "deliveryFee": "Стоимость",
+    "distance": "Расстояние",
+    "minutes": "мин"
+  },
+  "dish": {
+    "addToCart": "В корзину",
+    "total": "Итого",
+    "quantity": "Количество",
+    "extraToppings": "Дополнительно",
+    "optional": "По желанию",
+    "calories": "Ккал",
+    "protein": "Белки",
+    "fat": "Жиры",
+    "carbs": "Угл."
+  },
+  "cart": {
+    "title": "Корзина",
+    "clear": "Очистить",
+    "empty": "Корзина пуста",
+    "emptySubtitle": "Изучите наше меню и добавьте изысканные блюда к вашему заказу.",
+    "exploreMenu": "Меню",
+    "promoPlaceholder": "Промокод (попробуйте FOODLY10)",
+    "apply": "Применить",
+    "subtotal": "Сумма",
+    "promoDiscount": "Скидка",
+    "deliveryFee": "Доставка",
+    "serviceFee": "Сервис",
+    "goToCheckout": "К оформлению",
+    "deliveringTo": "Доставка по адресу"
+  },
+  "checkout": {
+    "title": "Оформление",
+    "deliveryAddress": "Адрес доставки",
+    "change": "Изменить",
+    "paymentMethod": "Способ оплаты",
+    "orderSummary": "Заказ",
+    "deliveryInstructions": "Комментарий",
+    "instructionsPlaceholder": "Например: оставьте у двери или позвоните по прибытии...",
+    "placeOrder": "Заказать",
+    "processing": "Обработка...",
+    "terms": "Нажимая «Заказать», вы соглашаетесь с Условиями обслуживания",
+    "home": "Дом",
+    "aptInfo": "Кв 402 • Код: 1234"
+  },
+  "orders": {
+    "title": "Заказы",
+    "active": "Активные",
+    "past": "История",
+    "noActive": "Нет активных заказов",
+    "noPast": "Нет прошлых заказов",
+    "activeLabel": "Активен",
+    "preparing": "Готовится",
+    "delivered": "Доставлен",
+    "outForDelivery": "В пути",
+    "kitchenPreparing": "Готовится на кухне",
+    "trackOrder": "Отследить",
+    "reorder": "Повторить",
+    "viewReceipt": "Чек"
+  },
+  "profile": {
+    "title": "Профиль",
+    "personalInfo": "Личные данные",
+    "paymentMethods": "Способы оплаты",
+    "addressBook": "Адреса",
+    "promotions": "Акции",
+    "settings": "Настройки",
+    "logout": "Выйти",
+    "version": "Версия 1.0.0",
+    "currentLocation": "Текущее местоположение"
+  },
+  "common": {
+    "search": "Поиск",
+    "notifications": "Уведомления",
+    "back": "Назад",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "delete": "Удалить",
+    "loading": "Загрузка..."
+  }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>My Orders - Premium Food Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#5f0a00",
+                    "primary-fixed": "#ffdad3",
+                    "surface-bright": "#f9f9fe",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "background": "#f9f9fe",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb4a5",
+                    "outline": "#8e706a",
+                    "surface-container-highest": "#e2e2e7",
+                    "on-surface-variant": "#5a413b",
+                    "on-secondary-fixed-variant": "#5b4300",
+                    "on-surface": "#1a1c1f",
+                    "inverse-primary": "#ffb4a5",
+                    "secondary": "#785900",
+                    "on-primary-fixed": "#3e0400",
+                    "inverse-surface": "#2e3034",
+                    "surface-container-low": "#f3f3f8",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed-variant": "#8e1500",
+                    "on-primary": "#ffffff",
+                    "primary": "#b3290f",
+                    "outline-variant": "#e3beb7",
+                    "on-secondary-container": "#6c5000",
+                    "secondary-fixed": "#ffdf9e",
+                    "surface-tint": "#b3290f",
+                    "on-tertiary-container": "#2d2d2d",
+                    "surface-container-high": "#e8e8ed",
+                    "surface-dim": "#d9dade",
+                    "secondary-fixed-dim": "#fabd00",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f0f0f5",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "tertiary": "#5f5e5e",
+                    "tertiary-container": "#969494",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e5e2e1",
+                    "secondary-container": "#fdc003",
+                    "on-background": "#1a1c1f",
+                    "surface-variant": "#e2e2e7",
+                    "surface": "#f9f9fe",
+                    "primary-container": "#ff5f40",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container": "#ededf2",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "24px",
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9fe;
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .order-card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scroll behavior for high-end feel */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .tab-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #b3290f;
+            border-radius: 999px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased">
+<!-- Top App Bar (Shared Component Strategy) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-sm">
+<div class="flex items-center justify-between px-margin-mobile h-14 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+<h1 class="font-headline-md text-headline-md text-on-surface">Orders</h1>
+</div>
+<button class="text-on-surface-variant hover:opacity-80 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-32 px-margin-mobile max-w-2xl mx-auto">
+<!-- Order Type Tabs -->
+<div class="flex items-center gap-stack-lg mb-stack-lg border-b border-outline-variant relative">
+<button class="pb-2 font-label-md text-label-md text-primary relative tab-active transition-colors" id="tab-active-btn" onclick="switchTab('active')">
+                Active
+            </button>
+<button class="pb-2 font-label-md text-label-md text-on-surface-variant relative transition-colors" id="tab-past-btn" onclick="switchTab('past')">
+                Past
+            </button>
+</div>
+<!-- Active Orders Section -->
+<section class="space-y-stack-md" id="active-orders">
+<h2 class="sr-only">Active Orders</h2>
+<!-- Active Order Card 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 order-card-shadow border border-surface-container transition-all active:scale-[0.98]">
+<div class="flex gap-4 mb-4">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A high-end, professionally photographed close-up of a gourmet artisan pizza with melting buffalo mozzarella, fresh basil leaves, and a blistered sourdough crust. The lighting is warm and cinematic, emphasizing the steam and texture. The background is a clean, minimalist kitchen setting that fits a premium delivery app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJFW1QLC2dnDON2Hb-LEKJvqc-ljez90J8EX8ftIhhCN1XUg3DnQlVi6j4mT3LW63YbGz4gBvU5Drg8XzSay6B0ttoSto7t0zQgWIBwWyQ6lPw9r3rLbEY2WwxwokVTWG0eXoUQhpSWyeKGmQyKZqOo257KBRlRmWZEMMpPnghvKfYXa5ENB6OKwobUlxPhjANilcz5NQiJ3N-aqwc5Vx9I6J5PRUzC0gSyDSVKO82-bklkL9lLjZMY0XD8rfzBtaqrYaoold1gihx"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[17px] text-on-surface">Sourdough &amp; Stone</h3>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Active</span>
+</div>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">Today, 12:45 PM • $42.50</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 mb-4 flex items-center gap-3">
+<div class="relative">
+<div class="w-2 h-2 bg-primary rounded-full animate-ping absolute inset-0"></div>
+<div class="w-2 h-2 bg-primary rounded-full relative"></div>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold">Out for Delivery</span>
+<span class="text-on-surface-variant text-[12px] ml-auto">ETA: 8 mins</span>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex-1 h-[50px] bg-primary text-on-primary rounded-2xl font-label-md text-label-md font-bold active:scale-95 transition-transform">
+                        Track Order
+                    </button>
+<button class="w-[50px] h-[50px] bg-surface-container text-on-surface rounded-2xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+<!-- Active Order Card 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 order-card-shadow border border-surface-container transition-all active:scale-[0.98]">
+<div class="flex gap-4 mb-4">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Vibrant and fresh organic poke bowl with bright orange salmon cubes, neon green edamame, purple cabbage, and creamy avocado slices. The bowl is captured from a top-down perspective with bright, clean daylight casting soft shadows on a white marble surface. The overall look is healthy, appetizing, and high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdkizE9CcOmQDWcMjdhQebEdHabjVW7VpfqYIZFDYKag33m7r2QUzGALiTuj7TEW_wY3su0MqTp6i9bGIxwPAJm75RzpI4GRm3skx5kE7GJIzxgeuTntFocv72pRncNm2IeuSNF_rIawTgF-uv3kUj6xzp5uZuuYX9YNsAR-TtMJCnVY71PAc92yVcecvKHP86jupSQ_pXL0UoxR3iJEbAhNnTwqH5K5KYO8U65hhOXxeImZwDflVpuVxnakSENlaI2IrU3e_DvwVY"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[17px] text-on-surface">Pacific Blue Poke</h3>
+<span class="bg-surface-container-high text-on-surface-variant text-[11px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Preparing</span>
+</div>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">Today, 1:10 PM • $28.00</p>
+</div>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex-1 h-[50px] bg-primary text-on-primary rounded-2xl font-label-md text-label-md font-bold active:scale-95 transition-transform">
+                        Track Order
+                    </button>
+</div>
+</div>
+</section>
+<!-- Past Orders Section (Hidden by default in this demo logic) -->
+<section class="hidden space-y-stack-md" id="past-orders">
+<h2 class="sr-only">Past Orders</h2>
+<!-- Past Order Card 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 order-card-shadow border border-surface-container opacity-90">
+<div class="flex gap-4 mb-4">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 grayscale-[0.3]">
+<img class="w-full h-full object-cover" data-alt="A luxurious stack of blueberry pancakes topped with a melting pat of butter and dripping with amber maple syrup. The setting is a cozy, high-end cafe with blurred warm background lights. The focus is sharp on the texture of the pancakes and the glistening syrup. The color palette is rich browns, deep blues, and creamy yellows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgBXijOfFbPXkt_TozNnz29m4JGpVAeKjzvnxSQ5fOxf1CgjbhgplSa8EUoM2E4H7i-bn3gDGoZHOd355_nDIfALj0_Y6hV7ScYoXwkKzShCYwn6mH5jDmGM7V_9jsMK_Nb2ws43zMpnn-AUsWKj_K8rAlwYW_J5fy3EeecbattRRq-pNJvOid7MHT6kkDsgPL2tfwnNeemLv2VA1h6K4S6kh0O1HJ1fZh9yOcvxf7oXAgy8wmSOjsE7mn3da5Fmkm9JCvIWVWvoqC"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[17px] text-on-surface">The Morning Club</h3>
+<span class="text-on-surface-variant text-[13px]">Delivered</span>
+</div>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">Oct 24, 2023 • $19.20</p>
+</div>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex-1 h-[50px] bg-surface-container text-on-surface rounded-2xl font-label-md text-label-md font-bold active:scale-95 transition-transform">
+                        Reorder
+                    </button>
+<button class="flex-1 h-[50px] border border-outline-variant text-on-surface rounded-2xl font-label-md text-label-md font-bold active:scale-95 transition-transform">
+                        View Receipt
+                    </button>
+</div>
+</div>
+<!-- Past Order Card 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 order-card-shadow border border-surface-container opacity-90">
+<div class="flex gap-4 mb-4">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 grayscale-[0.3]">
+<img class="w-full h-full object-cover" data-alt="Authentic Japanese ramen bowl with a rich, creamy tonkotsu broth, perfectly soft-boiled soy-marinated egg, nori, and tender chashu pork. The lighting is moody and sophisticated, highlighting the sheen of the broth. The bowl is set against a dark wooden table in a high-end restaurant atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi550E-RyISrpxD0VvytRuaXrmufroJsG7cY22chVh9ROTGPHQOHFXDUZ1DoPx5vbxTHxjpRju5PFtqNekwqqs0RHET-6jRXZfHo3uiuEk2EU8rGXl71HViLzZVkqboRw8zAS7h-x_1MpYq_rA8M3Q5Sk6TsK6RzokyWqMM-15_wQErxQbPX-7FGrYeO0F2L7J6rWLuvRPeKLP_TDUsPnOC468KhTj3EV_DJnNFc3ju2LL8QvF0wDmEB9heyPsaedVOjgYjvDfIyRE"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[17px] text-on-surface">Ichiban Ramen</h3>
+<span class="text-on-surface-variant text-[13px]">Delivered</span>
+</div>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">Oct 21, 2023 • $34.50</p>
+</div>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex-1 h-[50px] bg-surface-container text-on-surface rounded-2xl font-label-md text-label-md font-bold active:scale-95 transition-transform">
+                        Reorder
+                    </button>
+<button class="flex-1 h-[50px] border border-outline-variant text-on-surface rounded-2xl font-label-md text-label-md font-bold active:scale-95 transition-transform">
+                        Rate Order
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Shared Component Strategy) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center pt-2 pb-safe px-margin-mobile bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-[0_-1px_0_0_rgba(0,0,0,0.05)] z-50 rounded-t-xl h-16">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        function switchTab(type) {
+            const activeSec = document.getElementById('active-orders');
+            const pastSec = document.getElementById('past-orders');
+            const activeBtn = document.getElementById('tab-active-btn');
+            const pastBtn = document.getElementById('tab-past-btn');
+
+            if (type === 'active') {
+                activeSec.classList.remove('hidden');
+                pastSec.classList.add('hidden');
+                activeBtn.classList.add('text-primary', 'tab-active');
+                activeBtn.classList.remove('text-on-surface-variant');
+                pastBtn.classList.remove('text-primary', 'tab-active');
+                pastBtn.classList.add('text-on-surface-variant');
+            } else {
+                activeSec.classList.add('hidden');
+                pastSec.classList.remove('hidden');
+                pastBtn.classList.add('text-primary', 'tab-active');
+                pastBtn.classList.remove('text-on-surface-variant');
+                activeBtn.classList.remove('text-primary', 'tab-active');
+                activeBtn.classList.add('text-on-surface-variant');
+            }
+        }
+
+        // Simple haptic feedback simulation
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('click', () => {
+                if (window.navigator && window.navigator.vibrate) {
+                    window.navigator.vibrate(10);
+                }
+            });
+        });
+    </script>
+</body></html>

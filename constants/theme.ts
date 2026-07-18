@@ -1,53 +1,133 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
 import { Platform } from 'react-native';
-
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
-  },
-  dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    primary: '#b3290f',
+    onPrimary: '#ffffff',
+    primaryContainer: '#ff5f40',
+    onPrimaryContainer: '#5f0a00',
+    inversePrimary: '#ffb4a5',
+    primaryFixed: '#ffdad3',
+    primaryFixedDim: '#ffb4a5',
+    onPrimaryFixed: '#3e0400',
+    onPrimaryFixedVariant: '#8e1500',
+    surfaceTint: '#b3290f',
+    secondary: '#785900',
+    onSecondary: '#ffffff',
+    secondaryContainer: '#fdc003',
+    onSecondaryContainer: '#6c5000',
+    secondaryFixed: '#ffdf9e',
+    secondaryFixedDim: '#fabd00',
+    onSecondaryFixed: '#261a00',
+    onSecondaryFixedVariant: '#5b4300',
+    tertiary: '#5f5e5e',
+    onTertiary: '#ffffff',
+    tertiaryContainer: '#969494',
+    onTertiaryContainer: '#2d2d2d',
+    tertiaryFixed: '#e5e2e1',
+    tertiaryFixedDim: '#c8c6c5',
+    onTertiaryFixed: '#1c1b1b',
+    onTertiaryFixedVariant: '#474746',
+    error: '#ba1a1a',
+    onError: '#ffffff',
+    errorContainer: '#ffdad6',
+    onErrorContainer: '#93000a',
+    background: '#f9f9fe',
+    onBackground: '#1a1c1f',
+    surface: '#f9f9fe',
+    onSurface: '#1a1c1f',
+    surfaceDim: '#d9dade',
+    surfaceBright: '#f9f9fe',
+    surfaceContainerLowest: '#ffffff',
+    surfaceContainerLow: '#f3f3f8',
+    surfaceContainer: '#ededf2',
+    surfaceContainerHigh: '#e8e8ed',
+    surfaceContainerHighest: '#e2e2e7',
+    surfaceVariant: '#e2e2e7',
+    onSurfaceVariant: '#5a413b',
+    inverseSurface: '#2e3034',
+    inverseOnSurface: '#f0f0f5',
+    outline: '#8e706a',
+    outlineVariant: '#e3beb7',
   },
 };
 
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
+export const Fonts = {
+  displayLg: {
+    fontFamily: 'PlusJakartaSans-Bold',
+    fontSize: 34,
+    fontWeight: '700' as const,
+    lineHeight: 41,
+    letterSpacing: -0.02,
   },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
+  headlineLg: {
+    fontFamily: 'PlusJakartaSans-Bold',
+    fontSize: 28,
+    fontWeight: '700' as const,
+    lineHeight: 34,
+    letterSpacing: -0.01,
   },
-  web: {
-    sans: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
-    serif: "Georgia, 'Times New Roman', serif",
-    rounded: "'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif",
-    mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+  headlineMd: {
+    fontFamily: 'PlusJakartaSans-SemiBold',
+    fontSize: 22,
+    fontWeight: '600' as const,
+    lineHeight: 28,
   },
-});
+  headlineLgMobile: {
+    fontFamily: 'PlusJakartaSans-Bold',
+    fontSize: 24,
+    fontWeight: '700' as const,
+    lineHeight: 30,
+  },
+  bodyLg: {
+    fontFamily: 'PlusJakartaSans-Regular',
+    fontSize: 17,
+    fontWeight: '400' as const,
+    lineHeight: 24,
+  },
+  bodyMd: {
+    fontFamily: 'PlusJakartaSans-Regular',
+    fontSize: 15,
+    fontWeight: '400' as const,
+    lineHeight: 20,
+  },
+  labelMd: {
+    fontFamily: 'PlusJakartaSans-Medium',
+    fontSize: 13,
+    fontWeight: '500' as const,
+    lineHeight: 18,
+  },
+  platform: Platform.select({
+    ios: {
+      sans: 'PlusJakartaSans-Regular',
+      bold: 'PlusJakartaSans-Bold',
+      semiBold: 'PlusJakartaSans-SemiBold',
+      extraBold: 'PlusJakartaSans-ExtraBold',
+      medium: 'PlusJakartaSans-Medium',
+    },
+    default: {
+      sans: 'PlusJakartaSans-Regular',
+      bold: 'PlusJakartaSans-Bold',
+      semiBold: 'PlusJakartaSans-SemiBold',
+      extraBold: 'PlusJakartaSans-ExtraBold',
+      medium: 'PlusJakartaSans-Medium',
+    },
+  }),
+};
+
+export const Spacing = {
+  marginMobile: 16,
+  marginDesktop: 24,
+  gutter: 12,
+  stackSm: 8,
+  stackMd: 16,
+  stackLg: 32,
+};
+
+export const BorderRadius = {
+  sm: 4,
+  md: 12,
+  lg: 16,
+  xl: 24,
+  full: 9999,
+};

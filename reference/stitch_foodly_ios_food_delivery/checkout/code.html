@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .apple-card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .safe-pb {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            scroll-behavior: smooth;
+        }
+        .glass-material {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#5f0a00",
+                        "primary-fixed": "#ffdad3",
+                        "surface-bright": "#f9f9fe",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "background": "#f9f9fe",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a5",
+                        "outline": "#8e706a",
+                        "surface-container-highest": "#e2e2e7",
+                        "on-surface-variant": "#5a413b",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "on-surface": "#1a1c1f",
+                        "inverse-primary": "#ffb4a5",
+                        "secondary": "#785900",
+                        "on-primary-fixed": "#3e0400",
+                        "inverse-surface": "#2e3034",
+                        "surface-container-low": "#f3f3f8",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#8e1500",
+                        "on-primary": "#ffffff",
+                        "primary": "#b3290f",
+                        "outline-variant": "#e3beb7",
+                        "on-secondary-container": "#6c5000",
+                        "secondary-fixed": "#ffdf9e",
+                        "surface-tint": "#b3290f",
+                        "on-tertiary-container": "#2d2d2d",
+                        "surface-container-high": "#e8e8ed",
+                        "surface-dim": "#d9dade",
+                        "secondary-fixed-dim": "#fabd00",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f0f5",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "tertiary": "#5f5e5e",
+                        "tertiary-container": "#969494",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary-container": "#fdc003",
+                        "on-background": "#1a1c1f",
+                        "surface-variant": "#e2e2e7",
+                        "surface": "#f9f9fe",
+                        "primary-container": "#ff5f40",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container": "#ededf2",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "24px",
+                        "stack-md": "16px",
+                        "gutter": "12px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                        "body-md": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-sm flex items-center justify-between px-margin-mobile h-14">
+<div class="flex items-center gap-2">
+<button class="active:scale-95 transition-transform duration-200" onclick="history.back()">
+<span class="material-symbols-outlined text-on-surface">arrow_back_ios</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Checkout</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">help_outline</span>
+</div>
+</header>
+<main class="pt-20 pb-32 px-margin-mobile max-w-2xl mx-auto space-y-6">
+<!-- Delivery Section -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface">Delivery Address</h2>
+<button class="text-primary font-label-md text-label-md">Change</button>
+</div>
+<div class="apple-card-shadow bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30">
+<div class="h-32 w-full relative">
+<div class="w-full h-full bg-cover bg-center" data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpY0bqzkrqd5zbkx1btvzTd1McVQi8eUylAcDaoMdFXn3JPcfcCPK4LbaHicXcKzTGJ2UUTAy8HTmjSoK_-aRdy68yCRmK5GaCAv3wOGPbvxyH10w5qX2UMnc4F09tnELOYzoMm2VUuvFvdAxbu-kUgUr9Y_-4yeRu4C83OKy9UZI_QxI0FnuG8mBNJ_6-ZyfZUPSraYxaGk80jp-m4JZBA09Dtlc0KlgK0K4PQ3IbkRKCYI57BFCRC8DQpcvILgUkXV58MeKpc_ar')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/20 to-transparent"></div>
+<div class="absolute bottom-3 left-3 bg-primary text-on-primary p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<div class="p-4 space-y-1">
+<p class="font-headline-md text-[17px] text-on-surface">Home</p>
+<p class="text-on-surface-variant font-body-md text-body-md leading-tight">450 Serra Mall, Stanford, CA 94305</p>
+<p class="text-on-surface-variant/70 font-label-md text-label-md italic">Apt 402 • Gate Code: 1234</p>
+</div>
+</div>
+</section>
+<!-- Payment Method (Apple Wallet Style) -->
+<section class="space-y-3">
+<h2 class="font-headline-md text-headline-md text-on-surface">Payment Method</h2>
+<div class="apple-card-shadow bg-surface-container-lowest rounded-2xl p-4 flex items-center justify-between border border-outline-variant/30 active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-black rounded-md flex items-center justify-center">
+<svg fill="none" height="13" viewbox="0 0 38 15" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.5 0.5H12.5L10.5 8.5L8.5 0.5H5.5L2.5 14.5H5.5L6.5 10.5H11.5L12.5 14.5H15.5L15.5 0.5ZM10.5 7.5H7.5L9 1.5L10.5 7.5Z" fill="white"></path>
+<path d="M21.5 10.5C21.5 12.7091 19.7091 14.5 17.5 14.5H16.5V0.5H17.5C19.7091 0.5 21.5 2.29086 21.5 4.5V10.5ZM18.5 3.5H19.5V11.5H18.5V3.5Z" fill="white"></path>
+<path d="M27.5 0.5H22.5V14.5H27.5V11.5H25.5V9.5H27.5V6.5H25.5V3.5H27.5V0.5Z" fill="white"></path>
+</svg>
+</div>
+<div>
+<p class="font-headline-md text-[17px] text-on-surface">Apple Pay</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Visa •••• 4242</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</section>
+<!-- Order Summary -->
+<section class="space-y-3">
+<h2 class="font-headline-md text-headline-md text-on-surface">Order Summary</h2>
+<div class="apple-card-shadow bg-surface-container-lowest rounded-2xl p-5 space-y-4 border border-outline-variant/30">
+<div class="flex justify-between items-center pb-3 border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A gourmet artisan truffle pizza with a perfectly charred thin crust, topped with fresh buffalo mozzarella, aromatic black truffle shavings, and a drizzle of premium olive oil. The lighting is warm and cinematic, emphasizing the steam and textures of the high-quality ingredients. The style is ultra-modern minimalism, emphasizing fresh, vibrant ingredients on a neutral, clean backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1z5RF0AyMSbYRzybttH2zXYR3DJ1y3KOB1_hri_6hgOg3_Mn4-lX50eTkQRzGqYFlmCy6f7wektIltrDpWY4U04IrKY3ltXo6FYmXAP7U6IsMlx6i6FjjcxckS_2mHHjCBOx1K0-nDBb9ZTdMB2XSothVX0HgJld74JVp0WVWeX2WBP-CRUGpMw8H9-HyMgGJyUbWIJNrrL5qnCpUI1lehv8z05c1FkqGDnJhwkNDhpTiseNM15CyKeumr8EWQPkn7HQ9_obeNPiw"/>
+</div>
+<div>
+<p class="font-headline-md text-[15px] text-on-surface">Truffle Mushroom Pizza</p>
+<p class="text-on-surface-variant text-label-md">1x • Large</p>
+</div>
+</div>
+<p class="font-headline-md text-[15px] text-on-surface">$24.00</p>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>$24.00</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Delivery Fee</span>
+<span>$2.99</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Service Fee</span>
+<span class="flex items-center gap-1">$1.50 <span class="material-symbols-outlined text-[14px]">info</span></span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-on-surface">Total</span>
+<span class="font-display-lg text-[22px] text-primary">$28.49</span>
+</div>
+</div>
+</section>
+<!-- Delivery Instructions -->
+<section class="space-y-3">
+<h2 class="font-headline-md text-headline-md text-on-surface">Delivery Instructions</h2>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low border-none rounded-xl p-4 text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:ring-2 focus:ring-primary/20 min-h-[100px] resize-none" placeholder="E.g. Please leave at the side door or call when you arrive..."></textarea>
+<div class="absolute bottom-3 right-3">
+<span class="material-symbols-outlined text-on-surface-variant/40">edit_note</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full glass-material bg-surface/80 pb-safe z-50">
+<div class="px-margin-mobile py-4 max-w-2xl mx-auto">
+<button class="w-full h-[54px] bg-primary text-on-primary rounded-2xl font-headline-md text-headline-md flex items-center justify-center gap-3 shadow-lg active:scale-[0.96] transition-all duration-200" id="place-order-btn" onclick="this.classList.add('opacity-80'); this.innerHTML='&lt;span class=\'material-symbols-outlined animate-spin\'&gt;sync&lt;/span&gt; Processing...'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+                Place Order
+            </button>
+<p class="text-center text-label-md text-on-surface-variant/60 mt-3 px-6">
+                By tapping Place Order, you agree to our Terms of Service and Privacy Policy.
+            </p>
+</div>
+</div>
+<script>
+        // Micro-interaction for the Apple Pay card
+        const paymentCard = document.querySelector('.apple-card-shadow');
+        paymentCard.addEventListener('touchstart', () => {
+            paymentCard.style.transform = 'scale(0.98)';
+        });
+        paymentCard.addEventListener('touchend', () => {
+            paymentCard.style.transform = 'scale(1)';
+        });
+
+        // Subtle parallax on the map snippet on scroll
+        window.addEventListener('scroll', () => {
+            const map = document.querySelector('[data-location]');
+            const scrollPos = window.scrollY;
+            map.style.backgroundPositionY = `${scrollPos * 0.1}px`;
+        });
+    </script>
+</body></html>

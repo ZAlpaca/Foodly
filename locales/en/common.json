@@ -1,0 +1,108 @@
+{
+  "welcome": {
+    "title": "Foodly",
+    "headline": "Elevate Your\nCulinary Journey",
+    "subtitle": "Experience premium dining from the city's finest chefs, delivered with the precision and elegance you deserve.",
+    "getStarted": "Get Started",
+    "logIn": "Log In",
+    "terms": "By continuing, you agree to our Terms of Service"
+  },
+  "explore": {
+    "deliverTo": "Deliver to",
+    "currentLocation": "Current Location",
+    "searchPlaceholder": "Search for dishes or restaurants...",
+    "categories": "Categories",
+    "seeAll": "See All",
+    "featured": "Featured Restaurants",
+    "freeDelivery": "Free Delivery",
+    "fastDelivery": "Fast Delivery"
+  },
+  "restaurant": {
+    "menu": "Menu",
+    "reviews": "Reviews",
+    "info": "Info",
+    "add": "Add",
+    "chefsChoice": "Chef's Choice",
+    "viewBasket": "View Basket",
+    "checkout": "Checkout",
+    "delivery": "Delivery",
+    "deliveryFee": "Delivery Fee",
+    "distance": "Distance",
+    "minutes": "min"
+  },
+  "dish": {
+    "addToCart": "Add to Cart",
+    "total": "Total",
+    "quantity": "Quantity",
+    "extraToppings": "Add extra toppings",
+    "optional": "Optional",
+    "calories": "Cal",
+    "protein": "Prot",
+    "fat": "Fat",
+    "carbs": "Carb"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "clear": "Clear",
+    "empty": "Your cart is empty",
+    "emptySubtitle": "Explore our menu and add fine gourmet meals to your order.",
+    "exploreMenu": "Explore Menu",
+    "promoPlaceholder": "Add promo code (try FOODLY10)",
+    "apply": "Apply",
+    "subtotal": "Subtotal",
+    "promoDiscount": "Promo Discount",
+    "deliveryFee": "Delivery Fee",
+    "serviceFee": "Service Fee",
+    "goToCheckout": "Go to Checkout",
+    "deliveringTo": "Delivering to"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "deliveryAddress": "Delivery Address",
+    "change": "Change",
+    "paymentMethod": "Payment Method",
+    "orderSummary": "Order Summary",
+    "deliveryInstructions": "Delivery Instructions",
+    "instructionsPlaceholder": "E.g. Please leave at the side door or call when you arrive...",
+    "placeOrder": "Place Order",
+    "processing": "Processing...",
+    "terms": "By tapping Place Order, you agree to our Terms of Service and Privacy Policy.",
+    "home": "Home",
+    "aptInfo": "Apt 402 • Gate Code: 1234"
+  },
+  "orders": {
+    "title": "Orders",
+    "active": "Active",
+    "past": "Past",
+    "noActive": "No active orders at the moment",
+    "noPast": "No past orders",
+    "activeLabel": "Active",
+    "preparing": "Preparing",
+    "delivered": "Delivered",
+    "outForDelivery": "Out for Delivery",
+    "kitchenPreparing": "Kitchen Preparing",
+    "trackOrder": "Track Order",
+    "reorder": "Reorder",
+    "viewReceipt": "View Receipt"
+  },
+  "profile": {
+    "title": "Profile",
+    "personalInfo": "Personal Info",
+    "paymentMethods": "Payment Methods",
+    "addressBook": "Address Book",
+    "promotions": "Promotions",
+    "settings": "Settings",
+    "logout": "Logout",
+    "version": "Version 1.0.0",
+    "currentLocation": "Current Location"
+  },
+  "common": {
+    "search": "Search",
+    "notifications": "Notifications",
+    "back": "Back",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "loading": "Loading..."
+  }
+}

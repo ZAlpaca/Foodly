@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Your Cart - Premium Hospitality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#5f0a00",
+                    "primary-fixed": "#ffdad3",
+                    "surface-bright": "#f9f9fe",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "background": "#f9f9fe",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb4a5",
+                    "outline": "#8e706a",
+                    "surface-container-highest": "#e2e2e7",
+                    "on-surface-variant": "#5a413b",
+                    "on-secondary-fixed-variant": "#5b4300",
+                    "on-surface": "#1a1c1f",
+                    "inverse-primary": "#ffb4a5",
+                    "secondary": "#785900",
+                    "on-primary-fixed": "#3e0400",
+                    "inverse-surface": "#2e3034",
+                    "surface-container-low": "#f3f3f8",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed-variant": "#8e1500",
+                    "on-primary": "#ffffff",
+                    "primary": "#b3290f",
+                    "outline-variant": "#e3beb7",
+                    "on-secondary-container": "#6c5000",
+                    "secondary-fixed": "#ffdf9e",
+                    "surface-tint": "#b3290f",
+                    "on-tertiary-container": "#2d2d2d",
+                    "surface-container-high": "#e8e8ed",
+                    "surface-dim": "#d9dade",
+                    "secondary-fixed-dim": "#fabd00",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f0f0f5",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "tertiary": "#5f5e5e",
+                    "tertiary-container": "#969494",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e5e2e1",
+                    "secondary-container": "#fdc003",
+                    "on-background": "#1a1c1f",
+                    "surface-variant": "#e2e2e7",
+                    "surface": "#f9f9fe",
+                    "primary-container": "#ff5f40",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container": "#ededf2",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "24px",
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "body-md": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .glass-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .ios-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased">
+<!-- Top AppBar (Mobile Layout) -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-margin-mobile h-14 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl shadow-sm">
+<button class="text-on-surface-variant active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Your Cart</h1>
+<button class="text-primary active:scale-95 transition-transform duration-200 font-label-md text-label-md">
+            Clear
+        </button>
+</header>
+<main class="pt-20 pb-40 px-margin-mobile max-w-2xl mx-auto">
+<!-- Delivery Address Section -->
+<div class="mb-stack-lg p-4 bg-surface-container-low rounded-xl flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant">Delivering to</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">221B Baker Street, London</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<!-- Cart Items List -->
+<div class="space-y-stack-md">
+<!-- Item 1 -->
+<div class="flex gap-4 p-4 bg-surface-container-lowest rounded-2xl ios-shadow group">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A top-down, high-end food photography shot of a gourmet truffle mushroom pasta dish with fresh herbs and shaved parmesan. The lighting is soft and natural, emphasizing the rich textures and appetizing tones. The background is a minimalist, light-mode hospitality setting with clean lines and a premium, warm aesthetic consistent with luxury dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD56uI32Uzgs0yNmPbwMOKpEKtGLX0OEZ-AM7d4U5L-mIYK0BfkjJCB_cSPnogafFlFyoCUEhJAoX0OuvngpkXZgzsltNybkXUFOU7axra20aeR0UTJbpc2qsKYQGqDLFn3wPAwcV760Mv9tQ8J-kqxrDaD7HuyxCep3JzO0ioQLikCB293JQ6N7x3Pqe-5cSF8KVfSIGRO6bN-xWGlOCSB_TwAq7q5M5f6qlK9wBZdtWc4r3lVpV53LvpHY6OMA8zWBJg4rKfMGrj4"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface !text-[17px]">Truffle Tagliatelle</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Extra Parmesan, No Garlic</p>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface">$24.00</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center bg-surface-container-low rounded-full px-1 py-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-surface-container-highest active:scale-90 transition-all text-on-surface">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="px-3 font-label-md text-label-md font-semibold">1</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-secondary-container active:scale-90 transition-all text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<button class="text-error active:scale-90 transition-all">
+<span class="material-symbols-outlined">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 p-4 bg-surface-container-lowest rounded-2xl ios-shadow">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a vibrant, fresh burrata salad with heirloom tomatoes, balsamic glaze, and microgreens. The style is bright and minimalist, capturing the dewy freshness of the ingredients under soft, warm lighting. The overall mood is sophisticated and aligns with a high-end, hospitality-focused mobile interface in light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZFnXT5X4Q3SRcZqCkEc_fSGunhE_raOZtAY0YivKxJUucPGMypkjCXTp-Z6kBhR8Oy0AVJt-GKfwq72dqIsh6CL6Jy9w3VPk2EI7Msm-Tn9iQgMTSsnTAKHXZ9QIczIngZQJNtkVClqcAQK2G8kuxGatSvmM4d1kWhJp6JEgRKHOfyw6zZMoapBSwfMvpvCwKOgMP_PWqRgvdNbel9JVzIHtyfEEnOgW9oduSY96o0XTXIX4ARcRF_OuALrdLjCIj2Nye8rxJm4N3"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface !text-[17px]">Heirloom Burrata</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Standard</p>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface">$18.50</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center bg-surface-container-low rounded-full px-1 py-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-surface-container-highest active:scale-90 transition-all text-on-surface">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="px-3 font-label-md text-label-md font-semibold">2</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-secondary-container active:scale-90 transition-all text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<button class="text-error active:scale-90 transition-all">
+<span class="material-symbols-outlined">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4 p-4 bg-surface-container-lowest rounded-2xl ios-shadow">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional food photograph of a decadent chocolate fondant with a molten center, served with a scoop of vanilla bean gelato. The lighting highlights the glossy texture of the chocolate and the creamy gelato. The presentation is elegant and minimal, set against a warm, neutrally-toned background suitable for a luxury dining application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWiI8Z9tdcucmO-Y8GZWLV4DC6d5vaJA8ssnC4GA68ml0PUzcM_TYi3OdChIUzaaSrPHTrmAWpAFteHlxx9-KLYIoXSu2l22PWeIGCV-6esYnoBsS2ARJ1HT1gbidkEQcC-4IL9JI57E3j_RvHlaB5uTmmTLXVvxNxx8C723_Muv9G1S-DcAHP_wEf2jgR1EbGDHndUz_gYxIrs61E7MbjuCiVqFOOdQV61lf8Qk2HP1oE5rGtXHRjrZFO1UGLde6Km1VivXZJJf-H"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface !text-[17px]">Chocolate Fondant</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Warm</p>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface">$12.00</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center bg-surface-container-low rounded-full px-1 py-1">
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-surface-container-highest active:scale-90 transition-all text-on-surface">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="px-3 font-label-md text-label-md font-semibold">1</span>
+<button class="w-7 h-7 flex items-center justify-center rounded-full bg-secondary-container active:scale-90 transition-all text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<button class="text-error active:scale-90 transition-all">
+<span class="material-symbols-outlined">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Coupon Section -->
+<div class="mt-stack-lg">
+<div class="flex gap-3 items-center p-3 bg-white border border-outline-variant rounded-2xl">
+<span class="material-symbols-outlined text-primary ml-2">sell</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-body-md placeholder:text-on-surface-variant/50" placeholder="Add promo code" type="text"/>
+<button class="px-4 py-2 bg-on-surface text-surface font-label-md text-label-md rounded-xl active:scale-95 transition-transform">Apply</button>
+</div>
+</div>
+<!-- Order Summary Section -->
+<div class="mt-stack-lg space-y-3 pb-10">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md text-body-md">Subtotal</span>
+<span class="text-on-surface font-body-md text-body-md font-medium">$73.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md text-body-md">Delivery Fee</span>
+<span class="text-on-surface font-body-md text-body-md font-medium">$5.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md text-body-md">Service Fee</span>
+<span class="text-on-surface font-body-md text-body-md font-medium">$2.50</span>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-on-surface font-headline-md text-headline-md">Total</span>
+<span class="text-primary font-headline-md text-headline-md">$80.50</span>
+</div>
+</div>
+</main>
+<!-- Bottom Action Shell (Fixed) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/80 glass-blur px-margin-mobile pt-4 pb-safe z-50">
+<div class="max-w-2xl mx-auto">
+<button class="w-full h-[54px] bg-primary text-on-primary rounded-2xl font-headline-md text-headline-md flex items-center justify-center gap-3 active:scale-95 transition-all duration-200 shadow-lg shadow-primary/20">
+<span>Go to Checkout</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="h-4"></div> <!-- Spacer for safe area -->
+</div>
+</div>
+<!-- Navigation Bar Logic (Suppressed for transactional screen) -->
+<!-- As per "Shell Visibility & Relevance" rule: Transactional screens hide the global navigation shell -->
+<script>
+        // Subtle micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.style.opacity = '0.7';
+            });
+            btn.addEventListener('touchend', () => {
+                btn.style.opacity = '1';
+            });
+        });
+
+        // Scroll listener for TopAppBar glass effect intensity
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

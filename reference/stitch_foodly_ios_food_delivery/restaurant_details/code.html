@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Restaurant Detail - LuxeEats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#5f0a00",
+                        "primary-fixed": "#ffdad3",
+                        "surface-bright": "#f9f9fe",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "background": "#f9f9fe",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a5",
+                        "outline": "#8e706a",
+                        "surface-container-highest": "#e2e2e7",
+                        "on-surface-variant": "#5a413b",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "on-surface": "#1a1c1f",
+                        "inverse-primary": "#ffb4a5",
+                        "secondary": "#785900",
+                        "on-primary-fixed": "#3e0400",
+                        "inverse-surface": "#2e3034",
+                        "surface-container-low": "#f3f3f8",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#8e1500",
+                        "on-primary": "#ffffff",
+                        "primary": "#b3290f",
+                        "outline-variant": "#e3beb7",
+                        "on-secondary-container": "#6c5000",
+                        "secondary-fixed": "#ffdf9e",
+                        "surface-tint": "#b3290f",
+                        "on-tertiary-container": "#2d2d2d",
+                        "surface-container-high": "#e8e8ed",
+                        "surface-dim": "#d9dade",
+                        "secondary-fixed-dim": "#fabd00",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f0f5",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "tertiary": "#5f5e5e",
+                        "tertiary-container": "#969494",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary-container": "#fdc003",
+                        "on-background": "#1a1c1f",
+                        "surface-variant": "#e2e2e7",
+                        "surface": "#f9f9fe",
+                        "primary-container": "#ff5f40",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container": "#ededf2",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "24px",
+                        "stack-md": "16px",
+                        "gutter": "12px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["34px", { "lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+                        "body-md": ["15px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen">
+<!-- Top App Bar (Shell Navigation Suppressed for Detail View) -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header-nav">
+<div class="flex items-center justify-between px-margin-mobile h-14 w-full glass-blur bg-surface/10">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest/80 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest/80 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">search</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest/80 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface">favorite</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="relative h-[397px] w-full overflow-hidden">
+<div class="absolute inset-0 w-full h-full" data-alt="An ultra-luxury modern restaurant interior featuring high ceilings, warm golden atmospheric lighting, and large windows looking out to a twilight cityscape. The tables are dressed in crisp white linens with minimalist floral arrangements. The overall aesthetic is clean and premium with a palette of deep mahogany, ivory, and soft amber glow." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbrNVfLautwkdPP9rDOrRIQc73oRJss1ABrQeaxkSpHyDlNr8lDdMMKawClAJ9QWajM85IvAIW4jGWdDzkAhdMfFnKwhqIQPnUa_mGfDsM_e3dk0m96zM3PqyJrNUd3D-M1ULTZ3Zr9Gzce-EXN_eL9KtjWCyjfANROS3ebXwCNS6KeCiHfM-__k4zq3zV8HwoC5gNhexBxgkFHYyJ8kNBH3yCKVHeop5UMmo6gQAZ82KeNR96XYobTOjXk05yXDA8cJYmobpWvJ70')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/20"></div>
+</section>
+<!-- Info Section -->
+<section class="relative -mt-12 px-margin-mobile z-10">
+<div class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Maison de l'Élégance</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Modern French Fine Dining • $$ $</p>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 bg-secondary-container px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[18px] text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-secondary-container">4.9</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2">200+ reviews</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-4 border-t border-outline-variant/30">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-primary mb-1">schedule</span>
+<span class="font-label-md text-label-md text-on-surface-variant">25-35 min</span>
+</div>
+<div class="flex flex-col items-center border-x border-outline-variant/30">
+<span class="material-symbols-outlined text-primary mb-1">delivery_dining</span>
+<span class="font-label-md text-label-md text-on-surface-variant">$4.99 Delivery</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-primary mb-1">distance</span>
+<span class="font-label-md text-label-md text-on-surface-variant">1.2 miles</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Segmented Control -->
+<section class="sticky top-14 bg-background/95 backdrop-blur-md z-40 py-4 px-margin-mobile border-b border-outline-variant/20">
+<div class="flex bg-surface-container-low p-1 rounded-2xl relative">
+<button class="flex-1 py-2 rounded-xl text-center font-label-md text-label-md z-10 transition-colors text-primary font-bold" onclick="switchTab(this, 'menu')">Menu</button>
+<button class="flex-1 py-2 rounded-xl text-center font-label-md text-label-md z-10 transition-colors text-on-surface-variant" onclick="switchTab(this, 'reviews')">Reviews</button>
+<button class="flex-1 py-2 rounded-xl text-center font-label-md text-label-md z-10 transition-colors text-on-surface-variant" onclick="switchTab(this, 'info')">Info</button>
+<div class="absolute top-1 left-1 h-[calc(100%-8px)] w-[calc(33.33%-4px)] bg-surface-container-lowest rounded-xl shadow-sm transition-all duration-300 active-tab-indicator" id="active-indicator"></div>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="px-margin-mobile space-y-8 mt-6" id="content-menu">
+<!-- Section Header -->
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Signature Entrées</h2>
+<div class="space-y-6">
+<!-- Menu Item 1 -->
+<div class="flex gap-4 group">
+<div class="flex-1">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Wild Truffle Risotto</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Arborio rice slow-cooked with seasonal wild mushrooms, fresh black truffle shavings, and aged Parmesan.</p>
+<div class="flex items-center gap-3 mt-3">
+<span class="font-headline-md text-headline-md text-primary">$32.00</span>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-5 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95 shadow-sm">Add</button>
+</div>
+</div>
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0 shadow-sm border border-outline-variant/20">
+<div class="w-full h-full" data-alt="A top-down professional food photograph of a creamy wild truffle risotto served in a shallow white ceramic bowl. Fresh black truffle slices are artfully arranged on top with a sprig of micro-herbs. The lighting is bright and clean, typical of high-end culinary photography, highlighting the creamy texture and earthy tones of the dish." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEeSwuTcTHlKgD8AaclHh7LvUFeotKmvTstvXRvY9KdJ9GINvuj6jCWKSWCiO9kB6k9Sq31BMtotLpmwTzWRapOUdSJ2YLALFpJ0LyKc-yANWIY_GwvXLFbIex4WB0S99xKVyqTdV-VjHIzy8gC5aXcXeFCTkTLgeFDcFFhP82OvaVGCDAcy7m9XhkU8XUdHn-_f6pME1rIDP0MSnLT01cx7Ubato43lSkosWtczyJf1kRzv4xrtDljrs0UQEGukGY62VApWd-KHDW')"></div>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant/30"></div>
+<!-- Menu Item 2 -->
+<div class="flex gap-4 group">
+<div class="flex-1">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Pan-Seared Scallops</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Hokkaido scallops served over a velvet parsnip purée with brown butter and pomegranate reduction.</p>
+<div class="flex items-center gap-3 mt-3">
+<span class="font-headline-md text-headline-md text-primary">$45.00</span>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-5 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95 shadow-sm">Add</button>
+</div>
+</div>
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0 shadow-sm border border-outline-variant/20">
+<div class="w-full h-full" data-alt="Three perfectly seared sea scallops with golden-brown crusts placed atop a smooth white purée. Bright red pomegranate seeds and delicate green sprouts provide a splash of color. High-key lighting emphasizes the textures of the sear and the smoothness of the sauce in a luxury dining setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAY6I1YW453-TDmWzLUGZBKpwXVo-i7z64F-J8mLfCVWubZ_pLItCxABisQg7jecXhCECJt2JRIylwdubdkGANFk-cnocky97BT8gKgCOBj8ki7KoVVS8RuJ7lUaEoGVy0XuHAXK0B9A6JDqwcSsex4KPjVlR6alV0MV3ivO6sfbUzSrX2FEvdZDlaqHJpPZshEDEn_3PXJs1V9tD3NcBaWE8_h7wfmf2ZuJITQFT73qgV8anTs20mAHv1hlRadcOwgFyrsPLeHPg5o')"></div>
+</div>
+</div>
+<div class="h-[1px] bg-outline-variant/30"></div>
+<!-- Menu Item 3 -->
+<div class="flex gap-4 group">
+<div class="flex-1">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface mb-1">Wagyu Beef Rossini</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A5 Wagyu tenderloin, topped with foie gras and Madeira sauce on a toasted brioche base.</p>
+<div class="flex items-center gap-3 mt-3">
+<span class="font-headline-md text-headline-md text-primary">$85.00</span>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-5 py-1.5 rounded-full font-label-md text-label-md transition-all active:scale-95 shadow-sm">Add</button>
+</div>
+</div>
+<div class="w-24 h-24 rounded-2xl overflow-hidden shrink-0 shadow-sm border border-outline-variant/20">
+<div class="w-full h-full" data-alt="An exquisite plating of Wagyu beef Rossini, showcasing a thick cut of perfectly cooked steak topped with a delicate piece of seared foie gras. The dark Madeira sauce glazes the meat, reflecting soft ambient light. The background is a clean, minimalist restaurant table setting with warm highlights and deep, rich colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJGwzQGkB-Lg0H5IwnsROLOic7al0E8atIBM4Bno-axhwz5hSEWHeE4HXkJi74MY2gFFDgwl7S9aQQKlVFSHM0IMg2zLrjE7J3x31aenP4Q8fgYcHiX3-lyP4eur999VXoFaG0Dfk-7LY63av3HB2k3fzTXPYu73lXaMI4qNx78gztS4mz6sY7jtNXqiJ_FFnYtQO4rHHzTxo_lye2t4tjodxQk0az4HEjBCxuVaIMcHbHN38WBdzCr-J3iSbY_lEiuSKNhdeNBJPe')"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Style Featured Item -->
+<div class="bg-primary-container/10 rounded-[32px] p-6 border border-primary-container/20">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">auto_awesome</span>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider font-bold">Chef's Choice</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">The Degustation Experience</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">A curated 7-course journey through the finest seasonal ingredients, paired with premium vintages.</p>
+<div class="relative w-full h-48 rounded-2xl overflow-hidden mb-4">
+<div class="absolute inset-0 w-full h-full" data-alt="A montage of several small, artistically plated fine-dining courses. The shot is captured in a close-up macro style, focusing on textures of edible flowers, micro-greens, and delicate foams. The lighting is soft and directional, creating a sophisticated and atmospheric mood suitable for an upscale hospitality brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6sfGsZRAjIiYqgHmYD2BRseBsK_i_7UVkJqhdji6qxqJivNGhGSM4oAeVNhRuSVnfehVu9rGnn0YhWbsPbHjChyc_xb7F1Y-7XtR5jwLdXfI61NiFKTvpnVRcoHD-gikQhSTRGLAk9lFJV8y8ffrR1YmeEbgIO2FJD3JPDcVR0VcDkKG4dD4TaR9Va0EFDdT-9E6-0ZuEottwzOc_CNNPTrpb88wfQTPLSk-RKmHrTX4hYQ3N476l8mgherHT8zf-ak1mduBzv0xP')"></div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-2xl font-headline-md text-headline-md transition-all active:scale-[0.98] shadow-lg">Reserve for $180</button>
+</div>
+</section>
+</main>
+<!-- Floating Cart Bar (Contextual FAB replacement) -->
+<div class="fixed bottom-6 left-margin-mobile right-margin-mobile z-50">
+<div class="glass-blur bg-on-surface/90 text-surface-container-lowest flex items-center justify-between p-4 rounded-3xl shadow-2xl transition-all duration-300 transform" id="cart-bar">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold">2</div>
+<div>
+<p class="font-label-md text-label-md opacity-80 uppercase tracking-tighter">View Basket</p>
+<p class="font-headline-md text-headline-md">$77.00</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-8 py-3 rounded-2xl font-bold flex items-center gap-2 transition-colors active:scale-95">
+                Checkout
+                <span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<script>
+        function switchTab(el, tabName) {
+            const tabs = el.parentElement.querySelectorAll('button');
+            const indicator = document.getElementById('active-indicator');
+            
+            // Update Text Styles
+            tabs.forEach(tab => {
+                tab.classList.remove('text-primary', 'font-bold');
+                tab.classList.add('text-on-surface-variant');
+            });
+            el.classList.add('text-primary', 'font-bold');
+            el.classList.remove('text-on-surface-variant');
+
+            // Move Indicator
+            const index = Array.from(tabs).indexOf(el);
+            indicator.style.left = `calc(${index * 33.33}% + 4px)`;
+            
+            // Logic for content switching could go here
+            console.log('Switched to:', tabName);
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header-nav');
+            if (window.scrollY > 50) {
+                header.querySelector('div').classList.remove('bg-surface/10');
+                header.querySelector('div').classList.add('bg-surface/80', 'shadow-sm');
+            } else {
+                header.querySelector('div').classList.add('bg-surface/10');
+                header.querySelector('div').classList.remove('bg-surface/80', 'shadow-sm');
+            }
+        });
+
+        // Simple button interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Haptic feedback simulation or effect logic
+                if (this.innerText === 'Add') {
+                    this.innerText = 'Added';
+                    this.classList.remove('bg-primary');
+                    this.classList.add('bg-on-surface-variant');
+                    setTimeout(() => {
+                        this.innerText = 'Add';
+                        this.classList.add('bg-primary');
+                        this.classList.remove('bg-on-surface-variant');
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body></html>
